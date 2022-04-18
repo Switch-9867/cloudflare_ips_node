@@ -63,7 +63,7 @@ function GetOutputDir(){
             throw "Unsupported platform"; 
             return '';
         case 'linux':
-            return '/etc/nginx/conf/';
+            return '/etc/nginx/conf/'; //untested
         case 'openbsd':
             throw "Unsupported platform"; 
             return '';
