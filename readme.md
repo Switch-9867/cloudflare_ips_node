@@ -1,6 +1,10 @@
 # Cloudflare IPs for NGINX
 
-Grabs a list of ips from cloudflare and formats it into a valid conf file for nginx. Also places the file in your `/nginx/conf/` folder.
+Grabs a list of ips from [cloudflare](https://www.cloudflare.com/ips) and formats it into a valid conf file for nginx. Also places the file in your `/nginx/conf/` folder for easy usage.
+
+## Usage
+
+Add `include allow-cloudflare-only.conf;` to your `nginx.conf`
 
 TODO: Add console feedback.
 
