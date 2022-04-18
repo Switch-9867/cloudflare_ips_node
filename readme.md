@@ -1,9 +1,10 @@
 # Cloudflare IPs for NGINX
 
-Grabs a list of ips from cloudflare and formats it into a valid conf file for nginx.
-Also places the file in your `/nginx/conf/` folder
+Grabs a list of ips from cloudflare and formats it into a valid conf file for nginx. Also places the file in your `/nginx/conf/` folder.
 
-TODO: implement different directories based on platform
+TODO: Add console feedback.
+
+TODO: Implement different directories based on platform.
 
 Missing platforms:
 
