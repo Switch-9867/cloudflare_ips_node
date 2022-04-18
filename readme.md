@@ -14,7 +14,7 @@ node app.js
 
 This will place a file called `allow-cloudflare-only.conf` at `/nginx/conf/` alongside your `nginx.conf`.
 
-Add the following line to your `nginx.conf`. See [nginx http access.](http://nginx.org/en/docs/http/ngx_http_access_module.html)
+Add the following line to your `nginx.conf` to include the generated file. See [nginx http access.](http://nginx.org/en/docs/http/ngx_http_access_module.html)
 
 ```txt
 include     allow-cloudflare-only.conf;
