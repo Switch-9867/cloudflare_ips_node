@@ -3,14 +3,17 @@ const fs = require('fs');
 
 const IPLIST_URL = "https://www.cloudflare.com/ips";
 
-const OUTPUT_DIR = "";
+const OUTPUT_DIR = GetOutputDir();
 const OUTPUT_NAME = "allow-cloudflare-only.conf";
 
 const CUSTOM_ALLOW_LIST = ["192.168.50.0/24"];
 const IPv4_ALLOW_LIST = [];
 const IPv6_ALLOW_LIST = [];
 
-const file = fs.createWriteStream(OUTPUT_NAME);
+if (!fs.existsSync(OUTPUT_DIR)){
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+}
+const file = fs.createWriteStream(OUTPUT_DIR + OUTPUT_NAME);
 
 let x = 0;
 
@@ -46,6 +49,33 @@ function ParseResponse(res, list){
     res.on('end', () => {
         ParseList(rawData, list);
     });
+}
+
+function GetOutputDir(){
+    switch(process.platform){
+        case 'aix':
+            throw "Unsupported platform"; 
+            return '';
+        case 'darwin':
+            throw "Unsupported platform"; 
+            return '';
+        case 'freebsd':
+            throw "Unsupported platform"; 
+            return '';
+        case 'linux':
+            throw "Unsupported platform"; 
+            return '';
+        case 'openbsd':
+            throw "Unsupported platform"; 
+            return '';
+        case 'sunos':
+            throw "Unsupported platform"; 
+            return '';
+        case 'win32':
+            return 'C:/nginx/conf/';
+        default:
+            throw "Unexpected platform"; 
+    }
 }
 
 function ParseList(rawData, list){
