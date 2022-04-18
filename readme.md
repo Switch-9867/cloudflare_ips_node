@@ -1,14 +1,26 @@
 # Cloudflare IPs for NGINX
 
-Grabs a list of ips from [cloudflare](https://www.cloudflare.com/ips) and formats it into a valid conf file for nginx. Also places the file in your `/nginx/conf/` folder for easy usage.
+Grabs the list of IPs from [cloudflare](https://www.cloudflare.com/ips) and formats it into a valid conf file for nginx, placing it at `/nginx/conf/` for easy referencing.
+
+Using this configuration file allows you to block all traffic through nginx that does not originate from cloudflare, or to block traffic through a single nginx server.
 
 ## Usage
 
-Add the following line to your `nginx.conf`
+Run `app.js` with `node`.
+
+```bat
+node app.js
+```
+
+This will place a file called `allow-cloudflare-only.conf` at `/nginx/conf/` alongside your `nginx.conf`.
+
+Add the following line to your `nginx.conf`. See [nginx http access.](http://nginx.org/en/docs/http/ngx_http_access_module.html)
 
 ```txt
 include     allow-cloudflare-only.conf;
 ```  
+
+It is possible that cloudflare will update their IPs so make sure this is scheduled to run occasionally, every time it runs it will replace the existing file.
 
 ---
 
@@ -18,6 +30,11 @@ TODO: Add console feedback.
 
 TODO: Implement different directories based on platform.
 
+Currently this script supports:
+
+* Windows
+* Linux (Untested)
+
 Missing platforms:
 
 * aix
@@ -26,11 +43,15 @@ Missing platforms:
 * openbsd
 * sunos
 
-If you would like to add the valid directories for other platforms please submit a pull request <3
+If you would like to add valid directories for other platforms or have tested this on linux and have feedback please submit a pull request <3
+
+Note: If you modify the script to place the conf file in a different directory, or are referencing it from a different directory, you will have to reference it using an absolute path.
 
 ---
 
 ## Example Generated file
+
+### **`allow-cloudflare-only.conf`**
 
 ```conf
 # This file was automatically generated on: Sun Apr 17 2022 23:31:19 GMT-0400 (Eastern Daylight Time)
