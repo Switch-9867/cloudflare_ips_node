@@ -1,9 +1,23 @@
-Grabs a list of ips from cloudflare and formats it into a valid conf file for nginx
+# Cloudflare IPs for NGINX
+
+Grabs a list of ips from cloudflare and formats it into a valid conf file for nginx.
+Also places the file in your `/nginx/conf/` folder
 
 TODO: implement different directories based on platform
-# if you know the valid directories for other platforms pleas submit a pull request <3
 
-```
+Missing platforms:
+
+* aix
+* darwin
+* freebsd
+* openbsd
+* sunos
+
+If you would like to add the valid directories for other platforms please submit a pull request <3
+
+## Example
+
+```conf
 # This file was automatically generated on: Sun Apr 17 2022 23:31:19 GMT-0400 (Eastern Daylight Time)
 # https://www.cloudflare.com/ips
 
