@@ -1,0 +1,1 @@
+Grabs a list of ips from cloudflare and formats it into a valid conf file for nginx
