@@ -4,7 +4,15 @@ Grabs a list of ips from [cloudflare](https://www.cloudflare.com/ips) and format
 
 ## Usage
 
-Add `include allow-cloudflare-only.conf;` to your `nginx.conf`
+Add the following line to your `nginx.conf`
+
+```txt
+include     allow-cloudflare-only.conf;
+```  
+
+---
+
+## Additional information
 
 TODO: Add console feedback.
 
@@ -20,7 +28,9 @@ Missing platforms:
 
 If you would like to add the valid directories for other platforms please submit a pull request <3
 
-## Example
+---
+
+## Example Generated file
 
 ```conf
 # This file was automatically generated on: Sun Apr 17 2022 23:31:19 GMT-0400 (Eastern Daylight Time)
